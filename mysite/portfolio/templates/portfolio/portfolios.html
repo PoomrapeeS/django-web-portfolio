@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block style %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'portfolio/card_hover.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="container">
+    <div class="wrapper">
+        <div class="row text-left text-white">
+            <h1>My portfolios</h1>
+        </div>
+        <div class="row description py-2">
+            <h5 class="lh-base">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id reprehenderit dolorum rem obcaecati nihil non, iste eligendi alias asperiores? Porro ea laborum eius delectus voluptatum. Assumenda asperiores eaque suscipit tempora!</h5>
+        </div>
+        <div class="row">
+            {% for portfolio in portfolios %}
+            <div class="col-md-6">
+                <div class="card bg-dark text-white">
+                    <img src="{{portfolio.image}}" class="card-img" alt="">
+                    <div class="info">
+                        <h1>{{portfolio.title}}</h1>
+                        <p>{{portfolio.description}}</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

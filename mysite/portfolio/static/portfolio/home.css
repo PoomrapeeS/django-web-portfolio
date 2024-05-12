@@ -1,0 +1,8 @@
+html body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(#0D1E31, #111);
+    overflow: hidden;
+}
