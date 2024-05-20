@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-
 {% block style %}
     {{ block.super }}
     <link rel="stylesheet" href="{% static 'portfolio/card_hover.css' %}">
@@ -19,12 +18,14 @@
         <div class="row">
             {% for portfolio in portfolios %}
             <div class="col-md-6">
-                <div class="card bg-dark text-white">
-                    <img src="{{portfolio.image}}" class="card-img" alt="">
+                <div class="my-2 card bg-dark text-white">
+                    <a href="{% url 'detail' portfolio.slug %}"><img src="{{portfolio.image}}" class="card-img" alt=""></a>
                     <div class="info">
-                        <h1>{{portfolio.title}}</h1>
+                        <h3>{{portfolio.title}}</h2>
                         <p>{{portfolio.description}}</p>
-                        <a href="#" class="btn">Read More</a>
+                        {% for tag in portfolio.tags.all %}
+                            <a href="{% url 'tagged' tag.slug %}" class="badge rounded-pill bg-secondary">{{ tag }}</a>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
