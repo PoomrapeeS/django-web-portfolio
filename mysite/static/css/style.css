@@ -1,0 +1,36 @@
+body {
+    background-image: radial-gradient(#0D1E31, #111);
+}
+
+@media screen and (max-width: 576px) {
+    h5{
+        font-size: 80%
+    }
+
+    .badge {
+        font-size: 50%
+    }
+
+    p{
+        font-size: 80%
+    }
+}
+    
+
+
+label{
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.description{
+    color: #8a8a8a;
+}
+
+.page{
+    padding: 0 20%;
+}
+
+.form-group{
+    margin-bottom: 1rem;
+}

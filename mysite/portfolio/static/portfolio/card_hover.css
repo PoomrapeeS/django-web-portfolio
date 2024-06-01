@@ -1,24 +1,4 @@
-html, body{
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(#0D1E31, #111);
-}
-
-
-.container{
-    padding: 5rem 0;
-}
-
-.wrapper{
-    margin-left: 20%;
-    margin-right: 20%;
-}
-
-.description{
-    color: #8a8a8a;
-}
-
-.card{
+/* .card{
     width: 360px;
     height: 280px;
     box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
@@ -32,6 +12,7 @@ html, body{
     top: 0;
     left: 0;
 }
+
 .card:before{
     content: "";
     position: absolute;
@@ -83,4 +64,46 @@ html, body{
 
 .card .info .btn:hover{
     box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+} */
+
+.bar{
+    color: #8a8a8a;
 }
+
+.card{
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+}
+
+.card:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(7, 7, 7, 0.5), rgb(112, 113, 111));
+    z-index: 2;
+    transition: 0.5s all;
+    opacity: 0;
+}
+
+.card:hover:before{
+    opacity: 1;
+}
+
+.card .info{
+    color: #fff;
+    z-index: 2;
+    opacity: 0;
+    transition: 0.5s all;
+    position: absolute;
+}
+
+.card:hover .info{
+    opacity: 1;
+}
+
+.card .info .btn:hover{
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+} 

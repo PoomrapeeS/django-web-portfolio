@@ -14,36 +14,36 @@
     {% endif %}
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-white">Add Portfolio</h1>
+            <h1 class="text-white">Edit Portfolio</h1>
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="title" class="">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Add title">
+                    <input type="text" class="form-control" id="title" name="title" value="{{ form.instance.title }}" placeholder="Add title">
                 </div>
                 <div class="form-group">
-                    <label for="short_description">short_description</label>
-                    <textarea class="form-control" id="short_description" name="short_description" placeholder="Add short_description"></textarea>
+                    <label for="short_description">Short Description</label>
+                    <textarea class="form-control" id="short_description" name="short_description" placeholder="Add short_description">{{ form.instance.short_description }}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="images">images</label>
-                    <input type="text" class="form-control" id="images" name="images">
+                    <label for="images">Images</label>
+                    <input type="text" class="form-control" id="images" name="images" value="{{ form.instance.images }}">
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea class="form-control" id="description" name="description" placeholder="Add description"></textarea>
+                    <textarea class="form-control" id="description" name="description" placeholder="Add description">{{ form.instance.description }}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="technologies">technologies</label>
-                    <input type="text" class="form-control" id="technologies" name="technologies">
+                    <label for="technologies">Technologies</label>
+                    <input type="text" class="form-control" id="technologies" name="technologies" value="{{ form.instance.technologies }}">
                 </div>
                 <div class="form-group">
-                    <label for="resources">resources</label>
-                    <input type="text" class="form-control" id="resources" name="resources">
+                    <label for="resources">Resources</label>
+                    <input type="text" class="form-control" id="resources" name="resources" value="{{ form.instance.resources }}">
                 </div>
                 <div class="form-group">
                     <label>Tags</label>
-                    <input type="text" data-role="tagsinput" class="form-control" name="tags" hidden>
+                    <input type="text" data-role="tagsinput" class="form-control" name="tags" value="{% for tag in form.instance.tags.all %}{{ tag }},{% endfor %}" hidden>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
