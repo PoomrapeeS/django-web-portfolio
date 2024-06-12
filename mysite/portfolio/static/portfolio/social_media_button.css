@@ -1,0 +1,55 @@
+a.button{
+      color: #212529;
+}
+
+.wrapper .button{
+      display: inline-block;
+      height: 60px;
+      width: 60px;
+      background: #fff;
+      margin: 0 5px;
+      cursor: pointer;
+      box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease-out;
+      overflow: hidden;
+}
+
+.wrapper .button .icon{
+      display: inline-block;
+      height: 60px;
+      width: 60px;
+      line-height: 60px;
+      text-align: center;
+      transition: all 0.3s ease-out;
+}
+
+.wrapper .button:hover .icon.instagram{
+      background: #e4405f;
+}
+
+.wrapper .button:hover .icon.linkedin{
+      background: #3b5998;
+}
+
+.wrapper .button:hover .icon.github{
+      background: #66686a;
+}
+
+
+.wrapper .button .icon i{
+      font-size: 25px;
+      line-height: 60px;
+      transition: all 0.3s ease-out;
+}
+
+.wrapper .button:hover .icon i{
+      color: #fff;
+}
+
+.wrapper .button span{
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 60px;
+      margin-left: 10px;
+}
+

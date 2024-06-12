@@ -1,8 +1,14 @@
-html body{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: radial-gradient(#0D1E31, #111);
-    overflow: hidden;
+.parent{
+    min-height: 100vh;
+}
+
+.typing span{
+    color: rgb(65, 228, 174);
+}
+
+@media screen and (min-width: 768px){
+    .padding-x-10-percent{
+        padding-left: 15%;
+        padding-right: 10%;
+    }
 }

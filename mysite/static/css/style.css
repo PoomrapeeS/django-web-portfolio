@@ -14,10 +14,18 @@ body {
     p{
         font-size: 80%
     }
+
+    .page{
+        padding: 0 5%;
+    }
+}
+
+@media screen and (min-width: 577px) {
+    .page{
+        padding: 0 20%;
+    }
 }
     
-
-
 label{
     color: #ffffff;
     font-weight: bold;
@@ -27,10 +35,30 @@ label{
     color: #8a8a8a;
 }
 
-.page{
-    padding: 0 20%;
-}
-
+/* Footer */
 .form-group{
     margin-bottom: 1rem;
+}
+
+.footer-container{
+    margin-top: 5%;
+    padding: 5%;
+}
+  
+.contact-description{
+    padding-top: 3%;
+    color: #ffffff;
+}
+
+.contact-description a{
+    text-decoration: none;
+}
+
+.contact-email{
+    color: #afd9d5;
+    font-weight: bold; 
+}
+
+.contact-email:hover{
+    color: rgb(220, 212, 212);
 }
