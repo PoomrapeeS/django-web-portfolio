@@ -1,0 +1,8 @@
+asgiref==3.8.1
+Django==5.0.6
+django-livereload-server==0.5.1
+django-taggit==5.0.1
+fontawesomefree==6.5.1
+sqlparse==0.5.0
+tornado==6.4
+tzdata==2024.1
