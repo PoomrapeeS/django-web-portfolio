@@ -1,0 +1,7 @@
+asgiref==3.11.0
+Django==5.2.9
+django-taggit==6.1.0
+livereload==2.7.1
+sqlparse==0.5.4
+tornado==6.5.2
+tzdata==2025.2
