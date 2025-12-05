@@ -61,11 +61,12 @@ CSRF_TRUSTED_ORIGINS = []
 if not DEBUG:
     allowed = os.environ.get("ALLOWED_HOSTS", "")
     if allowed:
-        CSRF_TRUSTED_ORIGINS = [
-            f"https://{host.strip()}"
-            for host in allowed.split(",")
-            if host.strip() and host.strip() != "*"
-        ]
+        # Support both HTTP and HTTPS
+        CSRF_TRUSTED_ORIGINS = []
+        for host in allowed.split(","):
+            if host.strip() and host.strip() != "*":
+                CSRF_TRUSTED_ORIGINS.append(f"http://{host.strip()}")
+                CSRF_TRUSTED_ORIGINS.append(f"https://{host.strip()}")
 
 ROOT_URLCONF = "mysite.urls"
 
