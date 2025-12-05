@@ -6,4 +6,3 @@ livereload==2.7.1
 sqlparse==0.5.4
 tornado==6.5.2
 tzdata==2025.2
-whitenoise==6.7.0
