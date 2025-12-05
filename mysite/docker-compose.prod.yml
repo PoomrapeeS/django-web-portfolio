@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: django_portfolio
+    command: gunicorn mysite.wsgi:application --bind 0.0.0.0:80 --workers 3
+    ports:
+      - "80:80"
+    env_file:
+      - .env
+    restart: unless-stopped
