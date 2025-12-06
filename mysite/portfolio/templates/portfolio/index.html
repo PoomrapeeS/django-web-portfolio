@@ -1,35 +1,48 @@
-{% extends "base.html" %}
-{% load static %}
-
-
-{% block style %}
-  {{ block.super }}
-  <link rel="stylesheet" href="{% static 'portfolio/home.css' %}">
-  <link rel="stylesheet" href="{% static 'portfolio/social_media_button.css' %}">
-{% endblock style %}
-
-{% block content %}
-<div class="parent container-fluid d-flex justify-content-center align-items-center">
+{% extends "base.html" %} {% load static %} {% block style %} {{ block.super }}
+<link rel="stylesheet" href="{% static 'portfolio/home.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'portfolio/social_media_button.css' %}"
+/>
+{% endblock style %} {% block content %}
+<div
+  class="parent container-fluid d-flex justify-content-center align-items-center"
+>
   <div class="row">
     <div class="col-md-11">
       <div class="container">
         <div class="text-secondary">
-            <div class="py-5 text-center">
-              <div class="row">
-                <div class="col-md-12 typing">
-                  <h1 class="display-5 fw-bold text-white">Hello, <span class="auto-type">My name is Poom.</span></h1>
-                </div>
+          <div class="py-5 text-center">
+            <div class="row">
+              <div class="col-md-12 typing">
+                <h1 class="display-5 fw-bold text-white">
+                  Hello, <span class="auto-type">My name is Poom.</span>
+                </h1>
               </div>
-              <div class="row">
-                <div class="col-md-12 padding-x-10-percent" >
-                  <p class="fs-5 text-white text-opacity-75 font-monospace">I'm Poom, a Python developer bringing ideas to life with code. Let's build something together!</p>
-                  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <a href="{% url 'portfolio_home' %}" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold font-monospace">My Projects</a>
-                    <a href="https://drive.google.com/uc?export=download&id=1azLOQUb0IDEf0Mz4cY8fY9WAk8vxvqEr" class="btn btn-outline-light btn-lg px-4 font-monospace">Download CV</a>
-                  </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 padding-x-10-percent">
+                <p class="fs-5 text-white text-opacity-75 font-monospace">
+                  Hi, I’m Poom, a data engineer/software engineer. I’m an active
+                  learning person who likes to create fun projects related to
+                  both websites and data. If you are interested in my work,
+                  please keep in touch and make some collaboration 😉.
+                </p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                  <a
+                    href="{% url 'portfolio_home' %}"
+                    class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold font-monospace"
+                    >My Projects</a
+                  >
+                  <a
+                    href="https://drive.google.com/uc?export=download&id=1azLOQUb0IDEf0Mz4cY8fY9WAk8vxvqEr"
+                    class="btn btn-outline-light btn-lg px-4 font-monospace"
+                    >Download CV</a
+                  >
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </div>
@@ -47,7 +60,10 @@
               </a>
             </div>
             <div class="col-md-12 col-2">
-              <a href="https://www.linkedin.com/in/poomrapee-sareekachoncharu-198b03253/" class="button">
+              <a
+                href="https://www.linkedin.com/in/poomrapee-sareekachoncharu-198b03253/"
+                class="button"
+              >
                 <div class="icon linkedin">
                   <i class="fab fa-linkedin"></i>
                 </div>
@@ -71,13 +87,13 @@
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script>
   var typed = new Typed(".auto-type", {
-    strings: ["My name is Poom.", "I'm a Software Engineer.", "I'm a Python Developer."],
+    strings: [
+      "My name is Poom.",
+      "I'm a Software Engineer.",
+      "I'm a Python Developer.",
+    ],
     typeSpeed: 50,
     backSpeed: 50,
   });
 </script>
-{% endblock content %}
-
-{% block footer %}
-{% endblock footer %}
-
+{% endblock content %} {% block footer %} {% endblock footer %}
