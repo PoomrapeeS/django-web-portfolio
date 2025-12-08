@@ -16,13 +16,13 @@ fi
 
 # Build and start
 echo "🔨 Building Docker image..."
-docker-compose -f docker-compose.prod.yml build
+docker compose -f docker-compose.prod.yml build
 
 echo "🛑 Stopping existing containers..."
-docker-compose -f docker-compose.prod.yml down
+docker compose -f docker-compose.prod.yml down
 
 echo "🚀 Starting container..."
-docker-compose -f docker-compose.prod.yml up -d
+docker compose -f docker-compose.prod.yml up -d
 
 # Wait for service to start
 echo "⏳ Waiting for service to start..."
@@ -30,16 +30,16 @@ sleep 5
 
 # Run migrations
 echo "🔄 Running database migrations..."
-docker-compose -f docker-compose.prod.yml exec -T web python manage.py migrate --noinput
+docker compose -f docker-compose.prod.yml exec -T web python manage.py migrate --noinput
 
 # Collect static files
 echo "📦 Collecting static files..."
-docker-compose -f docker-compose.prod.yml exec -T web python manage.py collectstatic --noinput
+docker compose -f docker-compose.prod.yml exec -T web python manage.py collectstatic --noinput
 
 # Show status
 echo "✅ Deployment completed!"
 echo "📊 Container status:"
-docker-compose -f docker-compose.prod.yml ps
+docker compose -f docker-compose.prod.yml ps
 
 echo ""
 echo "🎉 Your app is running!"
