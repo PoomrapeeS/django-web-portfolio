@@ -1,6 +1,19 @@
 version: '3.8'
 
 services:
+  db:
+    image: postgres:15-alpine
+    container_name: postgres_portfolio
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-portfolio}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
   web:
     build: .
     container_name: django_portfolio
@@ -12,6 +25,8 @@ services:
     volumes:
       - static_volume:/app/staticfiles
       - media_volume:/app/media
+    depends_on:
+      - db
     restart: unless-stopped
 
   nginx:
@@ -32,3 +47,4 @@ services:
 volumes:
   static_volume:
   media_volume:
+  postgres_data:
